@@ -14,7 +14,8 @@ services:
       PROXY_ADDRESS_FORWARDING: "true"
       TZ: UTC
     ports:
-      - 443:8080
+      #- 443:8080
+      - 8080:8080
     volumes:
       - ${WEBAPP_STORAGE_HOME}/site/wwwroot/imports:/opt/jboss/keycloak/imports
       - ${WEBAPP_STORAGE_HOME}/site/wwwroot/themes/quotes:/opt/jboss/keycloak/themes/quotes
