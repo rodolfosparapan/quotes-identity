@@ -1,0 +1,12 @@
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+  - task: AzureWebAppContainer@1
+    inputs:
+      azureSubscription: 'Pay-As-You-Go(9d1c044e-7a5b-4e9e-8c98-da02d86937f0)'
+      appName: 'rodox-quotes-identity'
+      multicontainerConfigFile: './docker-compose.yml'

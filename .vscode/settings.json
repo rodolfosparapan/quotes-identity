@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/9d1c044e-7a5b-4e9e-8c98-da02d86937f0/resourceGroups/quotes-app/providers/Microsoft.Web/sites/rodox-quotes-identity",
+    "appService.deploySubpath": "."
+}

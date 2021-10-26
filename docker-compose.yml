@@ -1,0 +1,22 @@
+services:
+  
+  keycloak:
+    image: jboss/keycloak:11.0.3
+    container_name: keycloak
+    environment:
+      DB_VENDOR: POSTGRES
+      DB_ADDR: kesavan.db.elephantsql.com
+      DB_DATABASE: wkgvrlqs
+      DB_USER: wkgvrlqs
+      DB_PASSWORD: Peeqlj10WJeLPbfjuv3cCt2Fzub2RuJc
+      KEYCLOAK_USER: admin
+      KEYCLOAK_PASSWORD: password
+      PROXY_ADDRESS_FORWARDING: "true"
+      TZ: UTC
+    ports:
+      - 443:8080
+    volumes:
+      - ${WEBAPP_STORAGE_HOME}/site/wwwroot/imports:/opt/jboss/keycloak/imports
+      - ${WEBAPP_STORAGE_HOME}/site/wwwroot/themes/quotes:/opt/jboss/keycloak/themes/quotes
+    command: 
+      - "-b 0.0.0.0 -Dkeycloak.import=/opt/jboss/keycloak/imports/realm-export.json"
